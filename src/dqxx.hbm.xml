@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="Dqxx" table="dqxx">
+    <id name = "dqdm" column="dqdm">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "dqmc" column="dqmc"/>
+    <property name = "postcode" column="postcode"/>
+    <property name = "fzr" column="fzr"/>
+    <property name = "ps" column="ps"/>
+</class>
+</hibernate-mapping>
+

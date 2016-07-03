@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="wxt.model.Authorization_items" table="authorization_items">
+    <id name = "gndm" column="gndm">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "gnmc" column="gnmc"/>
+    <property name = "parentGndm" column="parentGndm"/>
+    <property name = "gnxm" column="gnxm"/>
+    <property name = "ps" column="ps"/>
+</class>
+</hibernate-mapping>
+

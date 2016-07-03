@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="User" table="user">
+    <id name = "userID" column="userID">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "userName" column="userName"/>
+        <property name = "email" column="email"/>
+    <property name = "password" column="password"/>
+    <property name = "ssrole" column="ssrole"/>
+    <property name = "ps" column="ps"/>
+
+</class>
+</hibernate-mapping>
+

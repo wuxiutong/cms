@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="wxt.model">
+    <class name="CMS_RPT_DWYSK" table="CMS_RPT_DWYSK">
+        <composite-id>
+            <key-property name="khdm" column="khdm" type="java.lang.String" length="50"/>
+            <key-property name="kjnd" column="kjnd" type="java.lang.String" length="25"/>
+        </composite-id>
+        <property name="yjsk" column="yjsk" length="10"/>
+        <property name="ysk" column="ysk"   length="10"/>
+    </class>
+</hibernate-mapping>
+

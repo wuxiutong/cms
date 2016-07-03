@@ -1,0 +1,24 @@
+
+.table_form {
+    border: none;
+    width: 100%;
+}
+
+.table_form tr {
+    /*padding-top: 5px;*/
+    border-bottom: solid lightgrey 1px;
+
+}
+
+.table_form tr td {
+    vertical-align:middle;
+   padding-top: 6px;
+    text-align: left;
+    border: none;
+}
+
+.table_form tr .td_label {
+    width: 100px;
+    text-align: right;
+    border: none;
+}

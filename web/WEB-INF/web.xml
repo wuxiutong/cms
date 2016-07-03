@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--过滤用户是否登陆-->
+    <filter>
+        <filter-name>CheckUserLogin</filter-name>
+        <filter-class>wxt.filter.CheckUserLogin</filter-class>
+        <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value> <!--设置你想用的字符集，我这里用的是UTF-8-->
+    </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CheckUserLogin</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--客户操作servlet引导-->
+    <servlet>
+        <servlet-name>KhxxBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.KhxxBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KhxxBaseServlet</servlet-name>
+        <url-pattern>/KhxxBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--地区操作servlet引导-->
+    <servlet>
+        <servlet-name>RegionBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.RegionBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegionBaseServlet</servlet-name>
+        <url-pattern>/RegionBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--部门操作servlet引导-->
+    <servlet>
+        <servlet-name>BmxxBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.BmxxBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BmxxBaseServlet</servlet-name>
+        <url-pattern>/BmxxBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--职员操作servlet引导-->
+    <servlet>
+        <servlet-name>ZyxxBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.ZyxxBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ZyxxBaseServlet</servlet-name>
+        <url-pattern>/ZyxxBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--单位类型操作servlet引导-->
+    <servlet>
+        <servlet-name>DwlxBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.DwlxBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DwlxBaseServlet</servlet-name>
+        <url-pattern>/DwlxBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--销售公司操作servlet引导-->
+    <servlet>
+        <servlet-name>BlocBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.BlocBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BlocBaseServlet</servlet-name>
+        <url-pattern>/BlocBaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--供应商操作servlet引导-->
+    <servlet>
+        <servlet-name>GysBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.GysBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GysBaseServlet</servlet-name>
+        <url-pattern>/GysBaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--软件版本操作servlet引导-->
+    <servlet>
+        <servlet-name>SoftVerBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.SoftVerBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SoftVerBaseServlet</servlet-name>
+        <url-pattern>/SoftVerBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--软件模块操作servlet引导-->
+    <servlet>
+        <servlet-name>SoftModelBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.SoftModelBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SoftModelBaseServlet</servlet-name>
+        <url-pattern>/SoftModelBaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--财务单据操作servlet引导-->
+    <servlet>
+        <servlet-name>CWBillBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.CWBillBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CWBillBaseServlet</servlet-name>
+        <url-pattern>/CWBillBaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--角色据操作servlet引导-->
+    <servlet>
+        <servlet-name>RoleBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.RoleBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RoleBaseServlet</servlet-name>
+        <url-pattern>/RoleBaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--用户操作servlet引导-->
+    <servlet>
+        <servlet-name>UserBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.UserBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserBaseServlet</servlet-name>
+        <url-pattern>/UserBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--初始化报表servlet-->
+    <servlet>
+        <servlet-name>InitRptBaseServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.InitRptBaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitRptBaseServlet</servlet-name>
+        <url-pattern>/InitRptBaseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--获取初始化维护日期的数据-->
+    <servlet>
+        <servlet-name>Get_RPT_KhxxForInitWHRQ</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_KhxxForInitWHRQ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_KhxxForInitWHRQ</servlet-name>
+        <url-pattern>/Get_RPT_KhxxForInitWHRQ</url-pattern>
+    </servlet-mapping>
+
+    <!--没有权限的servlet-->
+    <servlet>
+        <servlet-name>NoPermissionServlet</servlet-name>
+        <servlet-class>wxt.business.servlet.NoPermissionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoPermissionServlet</servlet-name>
+        <url-pattern>/NoPermissionServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--用户登陆-->
+    <servlet>
+        <servlet-name>UserLogin</servlet-name>
+        <servlet-class>wxt.business.servlet.users.UserLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLogin</servlet-name>
+        <url-pattern>/UserLogin</url-pattern>
+    </servlet-mapping>
+
+    <!--修改密码-->
+    <servlet>
+        <servlet-name>ChangePWD</servlet-name>
+        <servlet-class>wxt.business.servlet.ChangePWD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePWD</servlet-name>
+        <url-pattern>/ChangePWD</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetFjfa</servlet-name>
+        <servlet-class>wxt.business.servlet.GetFjfa</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetFjfa</servlet-name>
+        <url-pattern>/GetFjfa</url-pattern>
+    </servlet-mapping>
+
+    <!--检查当前数据库中是否存在当前即将添加的信息-->
+    <servlet>
+        <servlet-name>CheckExits</servlet-name>
+        <servlet-class>wxt.business.servlet.validateTools.CheckExits</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckExits</servlet-name>
+        <url-pattern>/CheckExits</url-pattern>
+    </servlet-mapping>
+
+    <!--检索维护日期记录-->
+    <servlet>
+        <servlet-name>Get_RPT_WHRQ</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_WHRQ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_WHRQ</servlet-name>
+        <url-pattern>/Get_RPT_WHRQ</url-pattern>
+    </servlet-mapping>
+
+    <!--获取某个单位的维护截至日期-->
+    <servlet>
+        <servlet-name>Get_RPT_WHQSRQ</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_WHQSRQ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_WHQSRQ</servlet-name>
+        <url-pattern>/Get_RPT_WHQSRQ</url-pattern>
+    </servlet-mapping>
+
+    <!--检索客户开票记录-->
+    <servlet>
+        <servlet-name>Get_RPT_YKPKHXX</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_YKPKHXX</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_YKPKHXX</servlet-name>
+        <url-pattern>/Get_RPT_YKPKHXX</url-pattern>
+    </servlet-mapping>
+
+    <!--检索客户开票明细记录-->
+    <servlet>
+        <servlet-name>Get_RPT_KHMXZ</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_KHMXZ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_KHMXZ</servlet-name>
+        <url-pattern>/Get_RPT_KHMXZ</url-pattern>
+    </servlet-mapping>
+
+    <!--查询应收款记录-->
+    <servlet>
+        <servlet-name>Get_RPT_DWYSK</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_DWYSK</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_DWYSK</servlet-name>
+        <url-pattern>/Get_RPT_DWYSK</url-pattern>
+    </servlet-mapping>
+
+    <!--初始化应收款-->
+    <servlet>
+        <servlet-name>Get_RPT_KhxxForInitDwysk</servlet-name>
+        <servlet-class>wxt.business.servlet.rpt.Get_RPT_KhxxForInitDwysk</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get_RPT_KhxxForInitDwysk</servlet-name>
+        <url-pattern>/Get_RPT_KhxxForInitDwysk</url-pattern>
+    </servlet-mapping>
+
+    <!--导出khxx-->
+    <servlet>
+        <servlet-name>ExportKhxxToExcel</servlet-name>
+        <servlet-class>wxt.business.servlet.Export.ExportKhxxToExcel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExportKhxxToExcel</servlet-name>
+        <url-pattern>/ExportKhxxToExcel</url-pattern>
+    </servlet-mapping>
+    <!--导出khxx-->
+    <servlet>
+        <servlet-name>CHART_SKMonth</servlet-name>
+        <servlet-class>wxt.business.servlet.charts.CHART_SKMonth</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CHART_SKMonth</servlet-name>
+        <url-pattern>/CHART_SKMonth</url-pattern>
+    </servlet-mapping>
+
+</web-app>

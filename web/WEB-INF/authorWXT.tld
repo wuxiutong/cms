@@ -1,0 +1,21 @@
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>eRedLab JSPTag Library</shortname>
+    <uri>/testTag</uri>
+    <info>自定义标签测试</info>
+    <tag>
+        <name>hello</name>
+        <tagclass>com.eredlab.taglib.test.TestTld</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>自定义标签测试</info>
+        <attribute>
+            <name>begin</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>end</name>
+            <required>true</required>
+        </attribute>
+    </tag>
+</taglib>

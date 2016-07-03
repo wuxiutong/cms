@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package = "wxt.model">
+    <class name="Khxx_oldInfo" table="khxx_oldInfo">
+    <composite-id >
+        <key-property name="khdm" column="khdm" type="string"></key-property>
+        <key-property name="updateTime" column="updateTime" type="string"></key-property>
+    </composite-id>
+    <property name = "updateUser" column="updateUser" length="50"/>
+    <property name = "khmc" column="khmc"/>
+    <property name = "gzdz" column="gzdz"/>
+    <property name = "bgdh" column="gzdh"/>
+    <property name = "ps" column="ps"/>
+    <property name = "khjl" column="khjl"/>
+    <property name = "ssdq" column="ssdq"/>
+    <property name = "xsgs" column="xsgs"/>
+    <property name = "khlx" column="khlx"/>
+    <property name = "updateType" column="updateType"/>
+    <property name = "zt" column="zt"/>
+</class>
+</hibernate-mapping>
+

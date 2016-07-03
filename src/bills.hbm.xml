@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="wxt.model">
+    <class name="CWBills" table="CWBills">
+        <id name="id" column="id">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="khdm" column="khdm"/>
+        <property name="khmc" column="khmc"/>
+        <property name="gsdm" column="gsdm"/>
+        <property name="gsmc" column="gsmc"/>
+        <property name="je" column="je"/>
+        <property name="djlx" column="djlx"/>
+        <property name="fylx" column="fylx"/>
+        <property name="nx" column="nx"/>
+        <property name="kjnd" column="kjnd"/>
+        <property name="kprq" column="kprq"/>
+        <property name="qsrq" column="qsrq"/>
+        <property name="jzrq" column="jzrq"/>
+        <property name="fph" column="fph"/>
+        <property name="kpr" column="kpr"/>
+        <property name="kprxm" column="kprxm"/>
+        <property name="lrr" column="lrr"/>
+        <property name="lrrxm" column="lrrxm"/>
+        <property name="shr" column="shr"/>
+        <property name="shrxm" column="shrxm"/>
+        <property name="skr" column="skr"/>
+        <property name="skrxm" column="skrxm"/>
+        <property name="zt" column="zt"/>
+        <property name="lrrq" column="lrrq"/>
+        <property name="ps" column="ps"/>
+    </class>
+</hibernate-mapping>
+

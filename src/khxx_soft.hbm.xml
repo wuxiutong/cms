@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="Khxx_soft" table="khxx_soft">
+    <composite-id >
+        <key-property name="softID" column="SoftID" type="string"></key-property>
+        <key-property name="khdm" column="khdm" length="25" type="string"></key-property>
+        <key-property name="gysDm" column="gysDm" length="25" type="string"></key-property>
+        <key-property name="verDm" column="verDm" length="25" type="string"></key-property>
+        <key-property name="modelDm" column="modelDm" length="25" type="string"></key-property>
+    </composite-id>
+    <property name = "khmc" column="khmc"/>
+    <property name = "gysMc" column="gysMc"/>
+    <property name = "verMc" column="verMc"/>
+    <property name = "modelMc" column="modelMc"/>
+    <property name = "yhs" column="yhs"/>
+    <property name = "gmrq" column="gmrq"/>
+    <property name = "ps" column="ps"/>
+</class>
+</hibernate-mapping>
+

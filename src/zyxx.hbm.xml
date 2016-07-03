@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="Zyxx" table="zyxx">
+    <id name = "zydm" column="zydm">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "zyxm" column="zyxm"/>
+        <property name = "ssbm" column="ssbm"/>
+    <property name = "sex" column="sex"/>
+    <property name = "mz" column="mz"/>
+    <property name = "birthday" column="birthday"/>
+    <property name = "lxdh" column="lxdh"/>
+    <property name = "sfzh" column="sfzh"/>
+    <property name = "jtzz" column="jtzz"/>
+    <property name = "xjdz" column="xjdz"/>
+    <property name = "byxx" column="byxx"/>
+    <property name = "zy" column="zy"/>
+    <property name = "xl" column="xl"/>
+    <property name = "rzrq" column="rzrq"/>
+    <property name = "ps" column="ps"/>
+
+</class>
+</hibernate-mapping>
+

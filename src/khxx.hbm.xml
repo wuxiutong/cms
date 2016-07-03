@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="Khxx" table="khxx">
+    <id name = "khdm" column="khdm">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "khmc" column="khmc"/>
+    <property name = "gzdz" column="gzdz"/>
+    <property name = "bgdh" column="gzdh"/>
+    <property name = "ps" column="ps"/>
+    <property name = "khjl" column="khjl"/>
+    <property name = "ssdq" column="ssdq"/>
+    <property name = "xsgs" column="xsgs"/>
+    <property name = "khlx" column="khlx"/>
+        <property name = "whrq" column="whrq"/>
+    <property name = "zt" column="zt"/>
+</class>
+</hibernate-mapping>
+

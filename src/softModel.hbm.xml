@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "wxt.model">
+    <class name="SoftModel" table="SoftModel">
+    <id name = "modelDm" column="modelDm">
+        <generator class  ="assigned"/>
+    </id>
+    <property name = "modelMc" column="modelMc"/>
+    <property name = "verDm" column="verDm"/>
+    <property name = "gysDm" column="gysDm"/>
+    <property name = "ps" column="ps"/>
+</class>
+</hibernate-mapping>
+
