@@ -16,8 +16,10 @@ import java.util.Vector;
  * Created by wuxiutong on 2015/8/20.
  */
 
-public class UserLogin extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class UserLogin {
+    public void execute(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -52,7 +54,4 @@ public class UserLogin extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doPost(request, response);
-    }
 }

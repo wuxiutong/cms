@@ -25,9 +25,13 @@ import java.util.*;
  * Created by admin on 2015/3/12.
  */
 public class Action_Khxx {
+    public void execute(Object requestObj,Object responseObj){
+
+    }
     //增加客户信息操作
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -166,8 +170,9 @@ public class Action_Khxx {
     }
 
     //删除客户操作
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
         Transaction transaction = null;
@@ -246,7 +251,9 @@ public class Action_Khxx {
     }
 
     //更新客户信息
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
@@ -407,7 +414,9 @@ public class Action_Khxx {
     }
 
     //获取所有客户信息，有过滤功能
-    public void getAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAll(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -421,32 +430,31 @@ public class Action_Khxx {
         String keyword ="";
         String mykhxx ="";
         String conditionStr="";
-        try {  //
-
+        try {
             //获取参数信息
             keyword = request.getParameter("keyword");
             khjl = request.getParameter("khjl");
-            if (khjl.trim().length() > 0)
+            if (null!=khjl && khjl.trim().length() > 0)
                 khjl="'"+khjl.replaceAll(",", "','")+"'";
             khlx = request.getParameter("khlx");
-            if (khlx.trim().length() > 0)
+            if (null!=khlx && khlx.trim().length() > 0)
                 khlx="'"+khlx.replaceAll(",", "','")+"'";
             xsgs = request.getParameter("xsgs");
-            if (xsgs.trim().length() > 0)
+            if (null!=xsgs && xsgs.trim().length() > 0)
                 xsgs="'"+xsgs.replaceAll(",", "','")+"'";
             softModel = request.getParameter("softModel");
-            if (softModel.trim().length() > 0)
+            if (null!= softModel && softModel.trim().length() > 0)
                 softModel="'"+softModel.replaceAll(",", "','")+"'";
             mykhxx = request.getParameter("mykhxx");
             dqxx = request.getParameter("dqxx");
-            if (dqxx.trim().length() > 0) {
+            if (null!=dqxx && dqxx.trim().length() > 0) {
                 dqxx = "'" + dqxx.replaceAll(",", "','") + "'";
             }
-            if(dqxx.length()>0){
+            if(null!=dqxx &&  dqxx.length()>0){
                 conditionStr =" ssdq in("+dqxx+")";
             }
             //判断软件模块
-            if(softModel.length()>0){
+            if( null!= softModel &&  softModel.length()>0){
                 if(conditionStr.length()>0){
                     conditionStr+=" and khdm in ("+"select khdm from Khxx_soft where modelDM in ("+softModel+"))";
                 }else{
@@ -455,7 +463,7 @@ public class Action_Khxx {
                 }
             }
             //判断销售公司
-            if(xsgs.length()>0){
+            if(null != xsgs && xsgs.length()>0){
                 if(conditionStr.length()>0){
                     conditionStr+=" and xsgs in ("+xsgs+")";
                 }else{
@@ -464,7 +472,7 @@ public class Action_Khxx {
                 }
             }
             //判断客户类型
-            if(khlx.length()>0){
+            if(null!= khlx && khlx.length()>0){
                 if(conditionStr.length()>0){
                     conditionStr+=" and khlx in ("+khlx+")";
                 }else{
@@ -473,7 +481,7 @@ public class Action_Khxx {
                 }
             }
             //判断客户类经理
-            if(khjl.length()>0){
+            if(null!=khjl && khjl.length()>0){
                 if(conditionStr.length()>0){
                     conditionStr+=" and khjl in ("+khjl+")";
                 }else{
@@ -482,10 +490,10 @@ public class Action_Khxx {
                 }
             }
             //获取like字符串
-            keyword = keyword.replace(" ", "");//替换空格
+            keyword = null!=keyword?keyword.replace(" ", ""):"";//替换空格
             String keywordStr = "";
             //如果存在关键字的话则生成关键字字段。
-            if (keyword.length() > 0) {
+            if (null!=keyword&& keyword.length() > 0) {
                 for(int i = 0 ;i<keyword.length();i++) {
                     keywordStr += "%" + keyword.charAt(i) ;
 //                    keyword = keyword.substring(1,keyword.length());
@@ -495,8 +503,8 @@ public class Action_Khxx {
             }
 
             //判断关键字
-            if(keywordStr.length()>0){
-                if(conditionStr.length()>0){
+            if(null!=keywordStr && keywordStr.length()>0){
+                if(null!=conditionStr && conditionStr.length()>0){
                     conditionStr+=" and "+keywordStr;
                 }else{
                     conditionStr=keywordStr;
@@ -505,7 +513,7 @@ public class Action_Khxx {
             }
 
             //最后授予条件where
-            if(conditionStr.length()>0){
+            if(null!=conditionStr && conditionStr.length()>0){
                 conditionStr=" where "+conditionStr;
             }else{
                 conditionStr="";
@@ -587,7 +595,9 @@ public class Action_Khxx {
     }
     //获取某一个客户信息
 
-    public void getOneKhxx(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneKhxx(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         //JSONObject json  = new JSONObject();
@@ -737,7 +747,9 @@ public class Action_Khxx {
     }
 
     //获取某个客户的联系人
-    public void getLxrAndSoft(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getLxrAndSoft(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -797,7 +809,9 @@ public class Action_Khxx {
     }
 
     //获取所有客户信息给dialog
-    public void getAllForDialog(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAllForDialog(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/x-json");
         String dqdmmc = "";

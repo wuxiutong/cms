@@ -135,7 +135,7 @@ function LoginAjaxDone(json){
 	    	</div>
 	    </c:if>
     <div class="login_form">
-      <form action="UserLogin" id="login_form" method="post" data-callback="LoginAjaxDone">
+      <form action="UserLogin.action" id="login_form" method="post" data-callback="LoginAjaxDone">
         <div class="form-group">
           <label for="j_username" class="t">用户名：</label>
           <input id="j_username" value="" name="username" type="text" class="form-control x319 in" autocomplete="off">

@@ -219,7 +219,7 @@ var initValues = function () {
     khdm_alter = khdm_alter.substring(khdm_alter.indexOf("_") + 1)
     //初始化组件
     $.ajax({
-        url: "KhxxBaseServlet.getOneKhxx?khdmmc=" + khdm_alter, success: function (data) {
+        url: "Khxx.getOneKhxx.action?khdmmc=" + khdm_alter, success: function (data) {
             //获取返回的客户信息
             var khxx = data.khxx;
             $.CurrentNavtab.find('#alter_customer_gsdm').attr('value', khxx.khdm);

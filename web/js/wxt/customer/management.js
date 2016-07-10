@@ -198,7 +198,8 @@ var DataTable_customers = $('#datagrid_ManaCustomer').datagrid({
     showToolbar: false,
     toolbarItem: 'all',
     local: 'local',
-    dataUrl: 'KhxxBaseServlet.getAll',
+    dataUrl: 'Khxx.getAll.action',
+    // dataUrl: 'KhxxBaseServlet.getAll',
     dataType: 'json',
     loadType: 'GET',
     sortAll: true,
@@ -212,7 +213,7 @@ var DataTable_customers = $('#datagrid_ManaCustomer').datagrid({
     showEditBtnsCol: true,
     linenumberAll: false,
     fullGrid: true,
-    delUrl: 'DelKhxx',//删除按钮有事件调用URL
+    delUrl: 'Khxx.del.action',//删除按钮有事件调用URL
     delPK: 'khdm',
     delCallback: 'delCallback',
     columnMenu: false
