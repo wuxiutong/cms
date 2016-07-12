@@ -24,7 +24,9 @@ import java.util.List;
  */
 public class Action_Gys {
     //增加供应商
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -84,9 +86,12 @@ public class Action_Gys {
     }
 
     //修改供应商
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         Enumeration<String> enum1 = request.getParameterNames();
         JSONObject js_gys = new JSONObject();
         JSONObject json = new JSONObject();
@@ -143,9 +148,11 @@ public class Action_Gys {
     }
 
     //删除供应商
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
+        response.setCharacterEncoding("utf-8");
         Session session = null;
         PrintWriter pw = response.getWriter();
         JSONObject json = new JSONObject();
@@ -187,9 +194,11 @@ public class Action_Gys {
     }
 
     //获取所有的供应商
-    public void getAllForTree(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void getAllForTree(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
+        response.setCharacterEncoding("utf-8");
         JSONObject json = new JSONObject();
         List allGys = null;
         Iterator it = null;
@@ -210,9 +219,11 @@ public class Action_Gys {
     }
 
     //获取某个供应商的具体信息
-    public void getOneGys(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void getOneGys(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
+        response.setCharacterEncoding("utf-8");
         JSONObject json = new JSONObject();
         String gysdm = request.getParameter("gysDm").toString();
         List list = QueryData.getEntity("Gys", gysdm);
@@ -232,9 +243,11 @@ public class Action_Gys {
     }
 
     //获取某个所有的供应商组成代码+名称的json
-    public void getAllForJson(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("utf-8");
+    public void getAllForJson(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
+        response.setCharacterEncoding("utf-8");
         JSONObject json = new JSONObject();
         List allGys = null;
         Iterator it = null;

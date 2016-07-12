@@ -24,7 +24,7 @@
         },
         async: {
             enable: true,
-            url: "SoftVerBaseServlet.getAll",
+            url: "SoftVer.getAll.action",
             autoParam: ["id", "name=n", "level=lv"],
             otherParam: {"otherParam": "zTreeAsyncTest"},
             dataFilter: filter,
@@ -56,7 +56,7 @@
             $.CurrentDialog.find("#btn_lookbak").removeAttr("data-toggle");
         } else if ((treeNode.id).startsWith('ver_')) { //如果是软件版本则执行虾下面
             $.ajax({
-                url: 'SoftVerBaseServlet.getOneSoftVer',
+                url: 'SoftVer.getOneSoftVer.action',
                 data: {verDm: (treeNode.id).substr('ver_'.length, (treeNode.id).length)},
                 cache: true,
                 async: true,

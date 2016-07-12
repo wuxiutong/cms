@@ -2,4 +2,7 @@
 <filter-root>
     <filter id="UserLogin">wxt.business.servlet.users.UserLogin</filter>
     <filter id="Khxx">wxt.business.actions.Action_Khxx</filter>
+    <filter id="Gys">wxt.business.actions.Action_Gys</filter>
+    <filter id="SoftModel">wxt.business.actions.Action_SoftModel</filter>
+    <filter id="SoftVer">wxt.business.actions.Action_SoftVer</filter>
 </filter-root>

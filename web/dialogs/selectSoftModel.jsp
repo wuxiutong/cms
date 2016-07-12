@@ -24,7 +24,7 @@
         },
         async: {
             enable: true,
-            url: "SoftModelBaseServlet.getAllGysVerModelForTree",
+            url: "SoftMode.getAllGysVerModelForTree.action",
             autoParam: ["id", "name=n", "level=lv"],
             otherParam: {"otherParam": "zTreeAsyncTest"},
             dataFilter: filter,
@@ -56,7 +56,7 @@
             $.CurrentDialog.find("#btn_lookbak").removeAttr("data-toggle");
         } else if ((treeNode.id).startsWith('model_')) { //如果是软件版本则执行下面
             $.ajax({
-                url: 'SoftModelBaseServlet.getOneGysVerModeForJsonByModel',
+                url: 'SoftModel.getOneGysVerModeForJsonByModel.action',
                 data: {modelDm: (treeNode.id).substr('model_'.length, (treeNode.id).length)},
                 cache: true,
                 async: true,

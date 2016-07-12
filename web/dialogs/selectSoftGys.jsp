@@ -24,7 +24,7 @@
         },
         async: {
             enable: true,
-            url: "GysBaseServlet.getAllForTree",
+            url: "Gys.getAllForTree.action",
             autoParam: ["id", "name=n", "level=lv"],
             otherParam: {"otherParam": "zTreeAsyncTest"},
             dataFilter: filter,
@@ -45,7 +45,7 @@
         //如果选中的是供应商则执行下面
          if (1==1) { //如果是软件版本则执行虾下面
             $.ajax({
-                url: 'GysBaseServlet.getOneGys',
+                url: 'Gys.getOneGys.action',
                 data: {gysDm: (treeNode.id)},
                 cache: true,
                 async: true,

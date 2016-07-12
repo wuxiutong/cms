@@ -41,7 +41,7 @@
                             <div role="tabpanel" class="tab-pane active" id="tab_soft_gys" data-width="100%">
                                 <!--供应商表单-->
                                 <form id="gysForm" data-validator-option="{focusCleanup:true,timely:0}"
-                                      data-toggle="validate" method="post" action="GysBaseServlet.add"
+                                      data-toggle="validate" method="post" action="Gys.add.action"
                                       data-callback="navTabGysAjaxDone">
                                     <table>
                                         <tr>

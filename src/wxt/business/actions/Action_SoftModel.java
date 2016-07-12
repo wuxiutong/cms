@@ -26,7 +26,9 @@ import java.util.List;
  */
 public class Action_SoftModel {
     //增加一个软件模块
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -93,7 +95,9 @@ public class Action_SoftModel {
     }
 
     //修改一个软件模块
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -159,7 +163,9 @@ public class Action_SoftModel {
     }
 
     //删除一个软件模块
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
@@ -203,7 +209,9 @@ public class Action_SoftModel {
     }
 
     //获取所有供应商 版本 和模块
-    public void getAllGysVerModelForTree(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAllGysVerModelForTree(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -247,7 +255,9 @@ public class Action_SoftModel {
     }
 
     //获取某个模块包含版本和供应返回jsonArray格式
-    public void getOneGysVerModelForJsonArrayByModel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneGysVerModelForJsonArrayByModel(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -276,7 +286,9 @@ public class Action_SoftModel {
     }
 
     //获取一个模块的供应商和版本返回forjson
-    public void getOneGysVerModeForJsonByModel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneGysVerModeForJsonByModel(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();

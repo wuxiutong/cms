@@ -25,7 +25,9 @@ import java.util.List;
  */
 public class Action_SoftVer {
     //增加版本信息
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -89,7 +91,9 @@ public class Action_SoftVer {
         }
     }
     //修改版本信息
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -153,7 +157,9 @@ public class Action_SoftVer {
         }
     }
     //删除版本信息
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
@@ -196,7 +202,9 @@ public class Action_SoftVer {
         }
     }
     //获取所有版本信息
-    public void getAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAll(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -232,7 +240,9 @@ public class Action_SoftVer {
         }
     }
     //获取某个版本信息明细
-    public void getOneSoftVer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneSoftVer(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();
@@ -263,7 +273,9 @@ public class Action_SoftVer {
 
     }
     //获取某个版本和供应
-    protected void getOneGysVerByVer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void getOneGysVerByVer(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;response.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();

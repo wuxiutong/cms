@@ -17,7 +17,7 @@ var settingSoft = {
     },
     async: {
         enable: true,
-        url: "SoftModelBaseServlet.getAllGysVerModelForTree",
+        url: "SoftModel.getAllGysVerModelForTree.action",
         autoParam: ["id", "name=n", "level=lv"],
         otherParam: {"otherParam": "zTreeAsyncTest"},
         datasoft_filter: soft_filter,
@@ -35,7 +35,7 @@ function soft_zTreeOnClick(event, treeId, treeNode) {
     //如果选中的是供应商则执行下面
     if ((treeNode.id).startsWith('gys_')) {
         $.ajax({
-            url: 'GysBaseServlet.getOneGys',
+            url: 'Gys.getOneGys.action',
             data: {gysDm: (treeNode.id).substr((treeNode.id).indexOf("_") + 1, 100)},
             cache: true,
             async: true,
@@ -61,7 +61,7 @@ function soft_zTreeOnClick(event, treeId, treeNode) {
         });
     } else if ((treeNode.id).startsWith('ver_')) { //如果是软件版本则执行虾下面
         $.ajax({
-            url: 'SoftVerBaseServlet.getOneSoftVer',
+            url: 'SoftVer.getOneSoftVer.action',
             data: {verDm: (treeNode.id).substr((treeNode.id).indexOf("_") + 1, 100)},
             cache: true,
             async: true,
@@ -86,7 +86,7 @@ function soft_zTreeOnClick(event, treeId, treeNode) {
         });
     } else if ((treeNode.id).startsWith('model_')) { //如果是软件版本则执行虾下面
         $.ajax({
-            url: 'SoftModelBaseServlet.getOneGysVerModeForJsonByModel',
+            url: 'SoftModel.getOneGysVerModeForJsonByModel.action',
             data: {modelDm: (treeNode.id).substr((treeNode.id).indexOf("_") + 1, 100)},
             cache: true,
             async: true,
@@ -153,7 +153,7 @@ function soft_delGys() {
         displayMode: 'fade', displayPosition: 'middlecenter', okCall: function () {
             var gysdm = $.CurrentNavtab.find("#gysdm").val();
             $.ajax({
-                url: "GysBaseServlet.del",
+                url: "Gys.del.action",
                 data: {gysdm: gysdm},
                 cache: false,
                 async: true,
@@ -165,7 +165,7 @@ function soft_delGys() {
                     removeFormReadonly("#gysForm");//去除控件的只读属性
                     removeFormDisabled("#gysForm");//去除控件的只读属性
                     //更改修改按钮的action为增加
-                    $.CurrentNavtab.find("#gysForm").attr("action", "GysBaseServlet.add");
+                    $.CurrentNavtab.find("#gysForm").attr("action", "Gys.add.action");
                     $.CurrentNavtab.find("#gysForm").attr("data-callback", "navTabSoftGysAjaxDone");
                     $.CurrentNavtab.find("#save_gys").css("display", "none");
                     $.CurrentNavtab.find("#alter_gys").css("display", "inline");
@@ -194,7 +194,7 @@ function soft_delVer() {
                 var verDm = $.CurrentNavtab.find("#verDm").val();
                 {
                     $.ajax({
-                        url: "SoftVerBaseServlet.del",
+                        url: "SoftVer.del.action",
                         data: {verDm: verDm},
                         cache: false,
                         async: true,
@@ -206,7 +206,7 @@ function soft_delVer() {
                             removeFormReadonly("#softVerForm");//去除控件的只读属性
                             removeFormDisabled("#softVerForm");//去除控件的只读属性
                             //更改修改按钮的action为增加
-                            $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVerBaseServlet.add");
+                            $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVer.add.action");
                             $.CurrentNavtab.find("#softVerForm").attr("data-callback", "navTabSoftVerAjaxDone");
                             $.CurrentNavtab.find("#save_ver").css("display", "none");
                             $.CurrentNavtab.find("#alter_ver").css("display", "inline");
@@ -236,7 +236,7 @@ function soft_delModel() {
                 var modeldm = $.CurrentNavtab.find("#modeldm").val();
                 {
                     $.ajax({
-                        url: "SoftModelBaseServlet.del",
+                        url: "SoftModel.del.action",
                         data: {modeldm: modeldm},
                         cache: false,
                         async: true,
@@ -248,7 +248,7 @@ function soft_delModel() {
                             removeFormReadonly("#softModelForm");//去除控件的只读属性
                             removeFormDisabled("#softModelForm");//去除控件的只读属性
                             //更改修改按钮的action为增加
-                            $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModelBaseServlet.add");
+                            $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModel.add.action");
                             $.CurrentNavtab.find("#softModelForm").attr("data-callback", "navTabSoftModelAjaxDone");
                             $.CurrentNavtab.find("#save_model").css("display", "none");
                             $.CurrentNavtab.find("#alter_model").css("display", "inline");
@@ -361,7 +361,7 @@ $.CurrentNavtab.find("#addSoftVer").bind("click", function () {
     clearForm("#softVerForm");
     removeFormReadonly("#softVerForm");
     removeFormDisabled("#softVerForm");
-    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVerBaseServlet.add");
+    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVer.add.action");
     $.CurrentNavtab.find("#softVerForm").attr("data-callback", "navTabSoftVerAjaxDone");
     $.CurrentNavtab.find("#btn_softVerCancel").trigger("click");
 });
@@ -372,7 +372,7 @@ $.CurrentNavtab.find("#addGys").bind("click", function () {
     removeFormReadonly("#gysForm");
     removeFormDisabled("#gysForm");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#gysForm").attr("action", "GysBaseServlet.add");
+    $.CurrentNavtab.find("#gysForm").attr("action", "Gys.add.action");
     $.CurrentNavtab.find("#gysForm").attr("data-callback", "navTabSoftGysAjaxDone");
     $.CurrentNavtab.find("#btn_softGysCancel").trigger("click");
 });
@@ -383,7 +383,7 @@ $.CurrentNavtab.find("#addSoftModel").bind("click", function () {
     removeFormReadonly("#softModelForm");
     removeFormDisabled("#softModelForm");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModelBaseServlet.add");
+    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModel.add.action");
     $.CurrentNavtab.find("#softModelForm").attr("data-callback", "navTabSoftModelAjaxDone");
     $.CurrentNavtab.find("#btn_softModelCancel").trigger("click");
 });
@@ -395,7 +395,7 @@ $.CurrentNavtab.find("#alter_gys").bind("click", function () {
     $.CurrentNavtab.find("#address").removeAttr("readonly");
     $.CurrentNavtab.find("#ps").removeAttr("readonly");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#gysForm").attr("action", "GysBaseServlet.alter");
+    $.CurrentNavtab.find("#gysForm").attr("action", "Gys.alter.action");
     $.CurrentNavtab.find("#gysForm").attr("data-callback", "navTabSoftGysAjaxDone");
     $.CurrentNavtab.find("#save_gys").css("display", "inline");
     $.CurrentNavtab.find("#alter_gys").css("display", "none");
@@ -422,7 +422,7 @@ $.CurrentNavtab.find("#btn_softGysCancel").bind("click", function () {
     $.CurrentNavtab.find("#save_gys").css("display", "none");
     $.CurrentNavtab.find("#del_gys").css("display", "none");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#gysForm").attr("action", "GysBaseServlet.add");
+    $.CurrentNavtab.find("#gysForm").attr("action", "Gys.add.action");
     $.CurrentNavtab.find("#gysForm").attr("data-callback", "navTabSoftGysAjaxDone");
 });
 $.CurrentNavtab.find("#btn_softVerCancel").bind("click", function () {
@@ -437,7 +437,7 @@ $.CurrentNavtab.find("#btn_softVerCancel").bind("click", function () {
     $.CurrentNavtab.find("#ver_gysDm").attr("readonly", "readonly");
     $.CurrentNavtab.find("#ver_gysMc").attr("readonly", "readonly");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVerBaseServlet.add");
+    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVer.add.action");
     $.CurrentNavtab.find("#softVerForm").attr("data-callback", "navTabSoftVerAjaxDone");
     $.CurrentNavtab.find("#ver_gysDm").siblings("a.bjui-lookup").css("display", 'inline');
 });
@@ -457,7 +457,7 @@ $.CurrentNavtab.find("#btn_softModelCancel").bind("click", function () {
     $.CurrentNavtab.find("#model_verdm").attr("readonly", "readonly");
     $.CurrentNavtab.find("#model_vermc").attr("readonly", "readonly");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModelBaseServlet.add");
+    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModel.add.action");
     $.CurrentNavtab.find("#softModelForm").attr("data-callback", "navTabSoftModelAjaxDone");
     $.CurrentNavtab.find("#model_verdm").siblings("a.bjui-lookup").css("display", 'inline');
     return false;
@@ -473,7 +473,7 @@ $.CurrentNavtab.find("#alter_ver").bind("click", function () {
     $.CurrentNavtab.find("#del_ver").css("display", "inline");
     $.CurrentNavtab.find("#gyssoft").attr("disabled", "disabled");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVerBaseServlet.alter");
+    $.CurrentNavtab.find("#softVerForm").attr("action", "SoftVer.alter.action");
     $.CurrentNavtab.find("#softVerForm").attr("data-callback", "navTabSoftVerAjaxDone");
     $.CurrentNavtab.find("#ver_gysDm").siblings("a.bjui-lookup").css("display", 'inline');
     $.CurrentNavtab.find("#ver_gysDm").attr("readonly", "readonly");
@@ -504,7 +504,7 @@ $.CurrentNavtab.find("#alter_model").bind("click", function () {
     $.CurrentNavtab.find("#del_model").css("display", "inline");
     $.CurrentNavtab.find("#gyssoft").attr("disabled", "disabled");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModelBaseServlet.alter");
+    $.CurrentNavtab.find("#softModelForm").attr("action", "SoftModel.alter.action");
     $.CurrentNavtab.find("#softModelForm").attr("data-callback", "navTabSoftModelAjaxDone");
     return false;
 });
@@ -512,7 +512,7 @@ $.CurrentNavtab.find("#alter_model").bind("click", function () {
 function navTabSoftGysAjaxDone(json) {
     // DWZ.ajaxDone(json);
     if ('200' == json.statusCode) {
-        if ("GysBaseServlet.add" == ($.CurrentNavtab.find("#gysForm").attr("action"))) { //如果action是增加则直接增加节点
+        if ("Gys.add.action" == ($.CurrentNavtab.find("#gysForm").attr("action"))) { //如果action是增加则直接增加节点
 //                DWZ.ajaxDone(json);
             soft_addGysNode(json);
         } else { //如果不是addGys则修改节点名称
@@ -529,7 +529,7 @@ function navTabSoftGysAjaxDone(json) {
 function navTabSoftVerAjaxDone(json) {
     // DWZ.ajaxDone(json);
     if ('200' == json.statusCode) {
-        if ("SoftVerBaseServlet.add" == ($.CurrentNavtab.find("#softVerForm").attr("action"))) { //如果action是增加则直接增加节点
+        if ("SoftVer.add.action" == ($.CurrentNavtab.find("#softVerForm").attr("action"))) { //如果action是增加则直接增加节点
 //                DWZ.ajaxDone(json);
             soft_addVerNode(json);
         } else { //如果不是addSoftVer则修改节点名称
@@ -547,7 +547,7 @@ function navTabSoftVerAjaxDone(json) {
 function navTabSoftModelAjaxDone(json) {
     // DWZ.ajaxDone(json);
     if ('200' == json.statusCode) {
-        if ("SoftModelBaseServlet.add" == ($.CurrentNavtab.find("#softModelForm").attr("action"))) { //如果action是增加则直接增加节点
+        if ("SoftModel.add.action" == ($.CurrentNavtab.find("#softModelForm").attr("action"))) { //如果action是增加则直接增加节点
 //                DWZ.ajaxDone(json);
             soft_addModelNode(json);
         } else { //如果不是addSoftVer则修改节点名称

@@ -90,16 +90,7 @@ public class CheckUserLogin implements Filter {
                     } else if (servlet.contains("/BlocBaseServlet.")) {
                         //System.out.println("即将跳转BlocBaseServlet");
                         request.getRequestDispatcher("BlocBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/GysBaseServlet.")) {
-                        //System.out.println("即将跳转GysBaseServlet");
-                        request.getRequestDispatcher("GysBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/SoftVerBaseServlet.")) {
-                        //System.out.println("即将跳转SoftVerBaseServlet");
-                        request.getRequestDispatcher("SoftVerBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/SoftModelBaseServlet.")) {
-                        //System.out.println("即将跳转SoftModelBaseServlet");
-                        request.getRequestDispatcher("SoftModelBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/CWBillBaseServlet.")) {
+                   }  else if (servlet.contains("/CWBillBaseServlet.")) {
                         //System.out.println("即将跳转CWBillBaseServlet");
                         request.getRequestDispatcher("CWBillBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
                     } else if (servlet.contains("/RoleBaseServlet.")) {
