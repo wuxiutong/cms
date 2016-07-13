@@ -38,7 +38,7 @@
             <td valign="top" align="center" rowspan="3" style="border-bottom: solid lightgrey 1px;border-right: solid lightgrey 1px;">
                 <div style="margin-top: 15px">
                     <form style="display: none" id="bmxxForm" data-validator-option="{focusCleanup:true,timely:0}"
-                          data-toggle="validate" data-callback="navTabBmxxAjaxDone" method="post" action="BmxxBaseServlet.add">
+                          data-toggle="validate" data-callback="navTabBmxxAjaxDone" method="post" action="Bmxx.add.action">
                             <table>
                                 <tr>
                                     <td style="text-align: center">
@@ -135,7 +135,7 @@
                             </table>
                     </form>
                     <form name="zyxxForm" id="zyxxForm" data-validator-option="{focusCleanup:true,timely:0}"
-                          data-toggle="validate" data-callback="navTabZyxxAjaxDone" action="ZyxxBaseServlet.add"
+                          data-toggle="validate" data-callback="navTabZyxxAjaxDone" action="Zyxx.add.action"
                           method="post">
                         <table>
                             <tr>

@@ -26,7 +26,9 @@ import java.util.List;
  */
 public class Action_Bmxx {
     //增加部门信息
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -109,7 +111,9 @@ public class Action_Bmxx {
         }
     }
     //修改部门信息
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -174,7 +178,9 @@ public class Action_Bmxx {
     }
 
     //删除部门信息
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
@@ -221,7 +227,9 @@ public class Action_Bmxx {
     }
 
     //获取所有部门信息
-    public void getAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAll(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = null;
@@ -248,7 +256,9 @@ public class Action_Bmxx {
     }
 
     //获取一个部门详细信息
-    public void getOneBmxx(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneBmxx(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         String dm = request.getParameter("bmdm").toString();
@@ -282,7 +292,9 @@ public class Action_Bmxx {
     }
 
     //获取部门职员信息
-    public void getBmZy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getBmZy(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json  = null;
@@ -317,7 +329,9 @@ public class Action_Bmxx {
     }
 
     //检索部门职员
-    public void getOneBmOrZy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneBmOrZy(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
 //        System.out.println("传递过来的ID");

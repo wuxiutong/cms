@@ -31,7 +31,7 @@
                 </div>
             </td>
             <td style=" text-align: center;vertical-align: top;border:none;" width="70%">
-                <form id="dqxxForm"  method="post" action="RegionBaseServlet.add" data-validator-option="{focusCleanup:true,timely:0}" data-toggle="validate" data-callback="navTabDqxxAjaxDone" tyle="text-align: center; margin-top: -30px;border: none">
+                <form id="dqxxForm"  method="post" action="Region.add.action" data-validator-option="{focusCleanup:true,timely:0}" data-toggle="validate" data-callback="navTabDqxxAjaxDone" tyle="text-align: center; margin-top: -30px;border: none">
                     <table class="table_form" style="border: none">
                         <tr>
                             <td class="td_label">

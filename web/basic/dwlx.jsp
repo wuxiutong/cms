@@ -16,7 +16,7 @@
                 </div>
             </td>
             <td rowspan="2" style=" text-align: center;vertical-align: top;border: solid lightgrey 1px;">
-                <form id="dwlxForm" method="post" action="DwlxBaseServlet.add" class="pageForm required-validate"
+                <form id="dwlxForm" method="post" action="Dwlx.add.action" class="pageForm required-validate"
                       data-validator-option="{focusCleanup:true,timely:0}" data-toggle="validate"
                       data-callback="navTabAlterDWLXAjaxDone">
                     <table style="margin:15px auto;">

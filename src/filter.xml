@@ -5,4 +5,9 @@
     <filter id="Gys">wxt.business.actions.Action_Gys</filter>
     <filter id="SoftModel">wxt.business.actions.Action_SoftModel</filter>
     <filter id="SoftVer">wxt.business.actions.Action_SoftVer</filter>
+    <filter id="Bloc">wxt.business.actions.Action_Bloc</filter>
+    <filter id="Bmxx">wxt.business.actions.Action_Bmxx</filter>
+    <filter id="Zyxx">wxt.business.actions.Action_Zyxx</filter>
+    <filter id="Dwlx">wxt.business.actions.Action_Dwlx</filter>
+    <filter id="Region">wxt.business.actions.Action_Region</filter>
 </filter-root>

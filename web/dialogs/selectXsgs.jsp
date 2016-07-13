@@ -64,7 +64,7 @@
   var DataTable_1 =  $('#tableAllXsgs').datagrid({
     gridTitle : '销售公司信息',
     local: 'local',
-    dataUrl: 'BlocBaseServlet.getAllForDialog',
+    dataUrl: 'Bloc.getAllForDialog.do',
     dataType: 'json',
     sortAll: true,
     filterAll: false,

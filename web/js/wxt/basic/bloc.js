@@ -17,7 +17,7 @@ var settingForBloc = {
     },
     async: {
         enable: true,
-        url: "BlocBaseServlet.getAll",
+        url: "Bloc.getAll.action",
         autoParam: ["id", "name=n", "level=lv"],
         otherParam: {"otherParam": "zTreeAsyncTest"},
         dataFilter: filter,
@@ -32,7 +32,7 @@ function bloc_zTreeBeforeClick(treeId, treeNode, clickFlag) {
 };
 function bloc_zTreeOnClick(event, treeId, treeNode) {
     $.ajax({
-        url: 'BlocBaseServlet.getOneBloc',
+        url: 'Bloc.getOneBloc.action',
         data: {gsdm: treeNode.id},
         cache: true,
         async: true,
@@ -87,7 +87,7 @@ function returnTrue() {
 function bloc_delNode() {
     var gsdm = $.CurrentNavtab.find("#gsdm").val();
         $.ajax({
-            url: 'BlocBaseServlet.del',
+            url: 'Bloc.del.action',
             data: {gsdm: gsdm},
             cache: false,
             async: true,
@@ -138,7 +138,7 @@ function bloc_addNode(json) {
         $.CurrentNavtab.find("#alter_en").css("display", "none");
         $.CurrentNavtab.find("#save_en").css("display", "inline");
         $.CurrentNavtab.find("#enterprise").attr("disabled", "disabled");
-        $.CurrentNavtab.find("#enterpriseForm").attr("action", "BlocBaseServlet.alter");
+        $.CurrentNavtab.find("#enterpriseForm").attr("action", "Bloc.alter.action");
         $.CurrentNavtab.find("#enterpriseForm").attr("data-callback", "navTabEnterpriseAjaxDone");
         return false;
     });
@@ -161,7 +161,7 @@ function bloc_addNode(json) {
         $.CurrentNavtab.find("#del_en").css("display", "none");
         $.CurrentNavtab.find("#gsdm").css("background-color", "white");
         //更改修改按钮的action为修改
-        $.CurrentNavtab.find("#enterpriseForm").attr("action", "BlocBaseServlet.add");
+        $.CurrentNavtab.find("#enterpriseForm").attr("action", "Bloc.add.action");
         $.CurrentNavtab.find("#enterpriseForm").attr("data-callback", "navTabEnterpriseAjaxDone");
         return false;
     });
@@ -170,11 +170,11 @@ function navTabEnterpriseAjaxDone(json) {
     if (json.statusCode == 200) {
         if (json.altered) { //如果返回到的信息提示是修改则直接修改ztree
             bloc_alterNodeAjaxDone(json);
-            $.CurrentNavtab.find("#enterpriseForm").attr("action", "BlocBaseServlet.add");
+            $.CurrentNavtab.find("#enterpriseForm").attr("action", "Bloc.add.action");
             clearForm("#enterpriseForm");
             removeFormReadonly("#enterpriseForm")
         } else {
-            $.CurrentNavtab.find("#enterpriseForm").attr("action", "BlocBaseServlet.add");
+            $.CurrentNavtab.find("#enterpriseForm").attr("action", "Bloc.add.action");
             bloc_addNode(json);
         }
     }else {

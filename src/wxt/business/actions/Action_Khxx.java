@@ -31,7 +31,8 @@ public class Action_Khxx {
     //增加客户信息操作
     public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest)requestObj;
-        HttpServletResponse response = (HttpServletResponse)responseObj;request.setCharacterEncoding("utf-8");
+        HttpServletResponse response = (HttpServletResponse)responseObj;
+        request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();

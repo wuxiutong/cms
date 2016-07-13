@@ -36,7 +36,7 @@ var settingForBMZY = {
     },
     async: {
         enable: true,
-        url: "BmxxBaseServlet.getBmZy",
+        url: "Bmxx.getBmZy.action",
         autoParam: ["id", "name=n", "level=lv"],
         otherParam: {"otherParam": "zTreeAsyncTest"},
         dataFilter: filter,
@@ -53,7 +53,7 @@ function bmzy_zTreeBeforeClick(treeId, treeNode, clickFlag) {
 function bmzy_zTreeOnClick(event, treeId, treeNode) {
     //  alert(treeNode.id);
     $.ajax({
-        url: 'BmxxBaseServlet.getOneBmOrZy',
+        url: 'Bmxx.getOneBmOrZy.action',
         data: {dm: treeNode.id, mark: 'zy_'},
         cache: true,
         async: true,
@@ -134,7 +134,7 @@ function delBmxxNode(bmdm) {
     $(this).alertmsg("confirm", "确认删除,是否继续", {
         okCall: function () {
             $.ajax({
-                url: 'BmxxBaseServlet.del',
+                url: 'Bmxx.del.action',
                 data: {bmdm: bmdm},
                 cache: false,
                 async: true,
@@ -168,7 +168,7 @@ function delZyxxNode(zydm) {
     $(this).alertmsg("confirm", "确认删除,是否继续", {
         okCall: function () {
             $.ajax({
-                url: 'ZyxxBaseServlet.del',
+                url: 'Zyxx.del.action',
                 data: {zydm: zydm},
                 cache: false,
                 async: true,
@@ -221,7 +221,7 @@ function alterBmxxDone(json) {
     $.CurrentNavtab.find("#alter_bm").css("display", "none");
     $.CurrentNavtab.find("#save_bm").css("display", "none");
     $.CurrentNavtab.find("#bmdm").removeAttr("readonly");
-    $.CurrentNavtab.find("#bmxxForm").attr("action", "BmxxBaseServlet.add");
+    $.CurrentNavtab.find("#bmxxForm").attr("action", "Bmxx.add.action");
     $.CurrentNavtab.find("#bmxxForm").attr("data-callback", "navTabBmxxAjaxDone");
     $.CurrentNavtab.find("#bmzy").alertmsg('ok', json.message);
 }
@@ -250,7 +250,7 @@ function alterZyxxDone(json) {
     $.CurrentNavtab.find("#zydm").removeAttr("readonly");
     $.CurrentNavtab.find("#bmzy").removeAttr("disabled");
     clearForm("#zyxxForm");
-    $.CurrentNavtab.find("#zyxxForm").attr("action", "AddZyxx");
+    $.CurrentNavtab.find("#zyxxForm").attr("action", "Zyxx.AddZyxx.action");
     $.CurrentNavtab.find("#bmxxForm").attr("data-callback", "navTabZyxxAjaxDone");
     $.CurrentNavtab.find("#bmzy").alertmsg('ok', json.message);
 };
@@ -338,7 +338,7 @@ $.CurrentNavtab.find("#del_zy").bind("click", function () {
     return false;
 });
 $.CurrentNavtab.find("#save_zy").bind("click", function () {
-    $.CurrentNavtab.find("#zyxxForm").attr("action", "ZyxxBaseServlet.alter");
+    $.CurrentNavtab.find("#zyxxForm").attr("action", "Zyxx.alter.action");
     $.CurrentNavtab.find("#zyxxForm").attr("data-callback", "alterZyxxDone");
 });
 $.CurrentNavtab.find("#cancle_zy").bind("click", function () {
@@ -378,7 +378,7 @@ $.CurrentNavtab.find("#alter_bm").bind("click", function () {
     return false;
 });
 $.CurrentNavtab.find("#save_bm").bind("click", function () {
-    $.CurrentNavtab.find("#bmxxForm").attr("action", "BmxxBaseServlet.alter");
+    $.CurrentNavtab.find("#bmxxForm").attr("action", "Bmxx.alter.action");
     $.CurrentNavtab.find("#bmxxForm").attr("data-callback", "alterBmxxDone");
 });
 $.CurrentNavtab.find("#cancle_bm").bind("click", function () {

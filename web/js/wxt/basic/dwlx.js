@@ -16,7 +16,7 @@ var settingForDwlx = {
     },
     async: {
         enable: true,
-        url: "DwlxBaseServlet.getAll",
+        url: "Dwlx.getAll.action",
         autoParam: ["id", "name=n", "level=lv"],
         otherParam: {"otherParam": "zTreeAsyncTest"},
         dataFilter: dwlx_filter,
@@ -31,7 +31,7 @@ function dwlx_zTreeBeforeClick(treeId, treeNode, clickFlag) {
 };
 function dwlx_zTreeOnClick(event, treeId, treeNode) {
     $.ajax({
-        url: 'DwlxBaseServlet.getOneDwlx',
+        url: 'Dwlx.getOneDwlx.action',
         data: {lxdm: treeNode.id},
         cache: true,
         async: true,
@@ -81,7 +81,7 @@ function dwlx_delNode(lxdm) {
     $(this).alertmsg("confirm", "确认删除，是否继续？", {
         mask: true, okName: "确定", cancleName: "取消", okCall: function () {
             $.ajax({
-                url: 'DwlxBaseServlet.del',
+                url: 'Dwlx.del.action',
                 data: {lxdm: lxdm},
                 cache: false,
                 async: true,
@@ -164,7 +164,7 @@ $.CurrentNavtab.find("#alter_dwlx").bind("click", function () {
     $("#alter_dwlx").css("display", "none");
     $("#save_dwlx").css("display", "inline");
     $("#ztree_dwlx").attr("disabled", "disabled");
-    $("#dwlxForm").attr("action", "DwlxBaseServlet.alter");
+    $("#dwlxForm").attr("action", "Dwlx.alter.action");
     //$("#dwlxForm").attr("onsubmit", "return validateCallback(this, navTabDwlxAjaxDone,'确认修改吗？');");
     return false;
 });
@@ -189,7 +189,7 @@ $.CurrentNavtab.find("#cancle_dwlx").bind("click", function () {
     $.CurrentNavtab.find("#save_dwlx").css("display", "none");
     $.CurrentNavtab.find("#del_dwlx").css("display", "none");
     //更改修改按钮的action为修改
-    $.CurrentNavtab.find("#dwlxForm").attr("action", "DwlxBaseServlet.add");
+    $.CurrentNavtab.find("#dwlxForm").attr("action", "Dwlx.add.action");
     //$.CurrentNavtab.find("#dwlxForm").attr("onsubmit", "return validateCallback(this, navTabDwlxAjaxDone,'确认提交吗？');");
     return false;
 });
@@ -199,11 +199,11 @@ function navTabAlterDWLXAjaxDone(json) {
     if (json.statusCode == 200) {
         if (json.altered) { //如果返回到的信息提示是修改则直接修改ztree
             dwlx_alterNodeAjaxDone(json);
-            $.CurrentNavtab.find("#dwlxForm").attr("action", "DwlxBaseServlet.add");
+            $.CurrentNavtab.find("#dwlxForm").attr("action", "Dwlx.add.action");
             clearForm("#dwlxForm");
             removeFormReadonly("#dwlxForm")
         } else {
-            $.CurrentNavtab.find("#dwlxForm").attr("action", "DwlxBaseServlet.add");
+            $.CurrentNavtab.find("#dwlxForm").attr("action", "Dwlx.add.action");
             dwlx_addNode(json);
         }
     } else {

@@ -58,7 +58,7 @@
   var DataTable_1 =  $('#tableAllZyxx').datagrid({
     gridTitle : '职员信息',
     local: 'local',
-    dataUrl: 'ZyxxBaseServlet.getAll',
+    dataUrl: 'Zyxx.getAll.action',
     dataType: 'json',
     sortAll: true,
     filterAll: false,

@@ -16,7 +16,7 @@ var settingForRegion = {
     },
     async: {
         enable: true,
-        url: "RegionBaseServlet.getAll",
+        url: "Region.getAll.action",
         autoParam: ["id", "name=n", "level=lv"],
         otherParam: {"otherParam": "zTreeAsyncTest"},
         dataFilter: filter,
@@ -33,7 +33,7 @@ function region_zTreeBeforeClick(treeId, treeNode, clickFlag) {
 ;
 function region_zTreeOnClick(event, treeId, treeNode) {
     $.ajax({
-        url: 'RegionBaseServlet.getOneDqxx',
+        url: 'Region.getOneDqxx.action',
         data: {dqdm: treeNode.id},
         cache: true,
         async: true,
@@ -94,7 +94,7 @@ function region_delNode(dqdm) {
     $(this).alertmsg("confirm", "确认删除，继续？", {
         okCall:  function() {
             $.ajax({
-                url: 'RegionBaseServlet.del',
+                url: 'Region.del.action',
                 data: {dqdm: dqdm},
                 cache: false,
                 async: true,
@@ -191,7 +191,7 @@ $.fn.zTree.init($.CurrentNavtab.find("#region"), settingForRegion),
         }
     }),
     $.CurrentNavtab.find("#save").bind("click", function () {
-        $.CurrentNavtab.find("#dqxxForm").attr("action", "RegionBaseServlet.alter");
+        $.CurrentNavtab.find("#dqxxForm").attr("action", "Region.alter.action");
         $.CurrentNavtab.find("#save").css("display", "none");
         $.CurrentNavtab.find("#add").css("display", "inline");
         $.CurrentNavtab.find("#alter").css("display", "none");
@@ -219,7 +219,7 @@ function navTabDqxxAjaxDone(json) {
     if (json.statusCode == 200) {
         if (json.altered) { //如果返回到的信息提示是修改则直接修改ztree
             alterNodeAjaxDone(json);
-            $.CurrentNavtab.find("#dqxxForm").attr("action", "RegionBaseServlet.add");
+            $.CurrentNavtab.find("#dqxxForm").attr("action", "Region.add.action");
             $.CurrentNavtab.find("#dqdm").attr("value", "");
             $.CurrentNavtab.find("#dqdm").removeAttr("readonly");
             $.CurrentNavtab.find("#dqdm").css("background-color", "white");

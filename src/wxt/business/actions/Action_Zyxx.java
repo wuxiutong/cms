@@ -29,7 +29,9 @@ import java.util.Vector;
  */
 public class Action_Zyxx {
     //增加职员信息
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -103,7 +105,9 @@ public class Action_Zyxx {
     }
 
     //修改职员信息
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -172,7 +176,9 @@ public class Action_Zyxx {
     }
 
     //删除职员信息
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
@@ -217,7 +223,9 @@ public class Action_Zyxx {
     }
 
     //获取所有职员信息forZtree ,暂时弃用20150917
-    public void getAllForZtree(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAllForZtree(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json  = null;
@@ -251,7 +259,9 @@ public class Action_Zyxx {
         }
     }
     //获取所有职员信息
-    public void getAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAll(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         String flag = request.getParameter("flag");

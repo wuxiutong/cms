@@ -26,7 +26,9 @@ import java.util.Vector;
  */
 public class Action_Bloc {
     //增加销售公司
-    public void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void add(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -82,7 +84,9 @@ public class Action_Bloc {
         }
     }
     //删除销售公司
-    public void del(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void del(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Session session = null;
@@ -124,7 +128,9 @@ public class Action_Bloc {
         }
     }
     //修改销售公司
-    public void alter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void alter(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         Enumeration<String> enum1 = request.getParameterNames();
@@ -182,7 +188,9 @@ public class Action_Bloc {
         }
     }
     //获取所有的销售公司信息
-    public void getAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAll(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json  = null;
@@ -210,7 +218,9 @@ public class Action_Bloc {
         }
     }
     //获取所有的销售公司给某个dialog表格
-    public void getAllForDialog(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getAllForDialog(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json  = null;
@@ -244,7 +254,9 @@ public class Action_Bloc {
         }
     }
     //获取某个销售公司的具体信息
-    public void getOneBloc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void getOneBloc(Object requestObj, Object responseObj) throws ServletException, IOException {
+        HttpServletRequest request = (HttpServletRequest)requestObj;
+        HttpServletResponse response = (HttpServletResponse)responseObj;
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/x-json");
         JSONObject json = new JSONObject();

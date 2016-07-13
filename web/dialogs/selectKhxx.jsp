@@ -155,7 +155,7 @@
             },
             async: {
                 enable: true,
-                url: "RegionBaseServlet.getAll",
+                url: "Region.getAll.action",
                 autoParam: ["id", "name=n", "level=lv"],
                 otherParam: {"otherParam": "zTreeAsyncTest"},
                 dataFilter: filter,

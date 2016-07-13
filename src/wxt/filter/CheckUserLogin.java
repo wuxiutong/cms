@@ -75,22 +75,7 @@ public class CheckUserLogin implements Filter {
                     if (servlet.contains("/KhxxBaseServlet.")) {
                        // System.out.println("即将跳转KhxxBaseServlet"+ request.getParameter("keyword"));
                         request.getRequestDispatcher("KhxxBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/RegionBaseServlet.")) {
-                       // System.out.println("即将跳转RegionBaseServlet");
-                        request.getRequestDispatcher("RegionBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/BmxxBaseServlet.")) {
-                        //System.out.println("即将跳转BmxxBaseServlet");
-                        request.getRequestDispatcher("BmxxBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/ZyxxBaseServlet.")) {
-                        //System.out.println("即将跳转ZyxxBaseServlet");
-                        request.getRequestDispatcher("ZyxxBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/DwlxBaseServlet.")) {
-                       // System.out.println("即将跳转DwlxBaseServlet");
-                        request.getRequestDispatcher("DwlxBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                    } else if (servlet.contains("/BlocBaseServlet.")) {
-                        //System.out.println("即将跳转BlocBaseServlet");
-                        request.getRequestDispatcher("BlocBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
-                   }  else if (servlet.contains("/CWBillBaseServlet.")) {
+                    }  else if (servlet.contains("/CWBillBaseServlet.")) {
                         //System.out.println("即将跳转CWBillBaseServlet");
                         request.getRequestDispatcher("CWBillBaseServlet?requestServlet=" + servlet).forward(servletRequest, servletResponse);
                     } else if (servlet.contains("/RoleBaseServlet.")) {

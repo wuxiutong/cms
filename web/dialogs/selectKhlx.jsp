@@ -23,7 +23,7 @@
     },
     async: {
       enable: true,
-      url: "DwlxBaseServlet.getAll",
+      url: "Dwlx.getAll.action",
       autoParam: ["id", "name=n", "level=lv"],
       otherParam: {"otherParam": "zTreeAsyncTest"},
       dataFilter: filter,
@@ -44,7 +44,7 @@
   };
   function zTreeOnClick(event, treeId, treeNode) {
     $.ajax({
-      url: 'DwlxBaseServlet.getOneDwlx',
+      url: 'Dwlx.getOneDwlx.action',
       data: {lxdm: treeNode.id},
       cache: true,
       async: true,

@@ -27,7 +27,7 @@
                     <tr>
                         <td>
                             <form id="enterpriseForm" method="post"   class="pageForm required-validate"
-                                  data-validator-option="{focusCleanup:true,timely:0}" data-toggle="validate" action="BlocBaseServlet.add" data-callback="navTabEnterpriseAjaxDone" >
+                                  data-validator-option="{focusCleanup:true,timely:0}" data-toggle="validate" action="Bloc.add.action" data-callback="navTabEnterpriseAjaxDone" >
                                 <table class="table_form">
                                     <tr>
                                         <td class="td_label">
